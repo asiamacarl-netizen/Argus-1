@@ -1,0 +1,18 @@
+[workspace]
+members = ["crates/argus-contracts", "crates/argus-bus", "crates/argus-pipeline", "crates/argus-execution"]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+rust-version = "1.80"
+
+[workspace.dependencies]
+alloy-primitives = { version = "1", features = ["serde"] }
+anyhow = "1"
+redis = { version = "0.27", features = ["tokio-comp", "connection-manager"] }
+rmp-serde = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+thiserror = "2"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "sync", "time", "signal"] }
